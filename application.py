@@ -3,7 +3,7 @@
 from urls import urls
 import tornado.web
 import os
-import pymongo
+from pymongo import MongoClient
 
 SETTINGS = dict(
     template_path = os.path.join(os.path.dirname(__file__), "templates"),
@@ -20,5 +20,5 @@ application = tornado.web.Application(
 #                        user = conf.db['user'],
 #                        password = conf.db['pass'])
 
-conn = pymongo.collection("localhost", 27017)
+conn = MongoClient("localhost", 27017)
 db = conn["demo"]

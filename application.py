@@ -20,5 +20,4 @@ application = tornado.web.Application(
 #                        user = conf.db['user'],
 #                        password = conf.db['pass'])
 
-conn = MongoClient("localhost", 27017)
-db = conn["demo"]
+

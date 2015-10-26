@@ -2,10 +2,13 @@
 
 import tornado.web 
 from BaseHandler import BaseHandler
-from model.entity import Entity
+from model import MongoConnect
 
 class MainHandler(BaseHandler):
     def get(self):
-        entity = Entity.get('J_blue\'s blog')
-        self.render('index.html', entity = entity) 
+        self.render('index.html',
+                   page_title = "Burt's Books | Home",
+                   header_text = "Welcome to Burt's Books!",) 
+
+
 

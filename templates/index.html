@@ -5,7 +5,12 @@
         <title>J_blue's blog</title>
     </head>
     <body>
-        <h1>Hello, tornado world</h1>
-        <h2>${entity.name}</h2>
+        <form method="post" action="/blog">
+        	<p>n1 <br><input type="text" name="noun1"></p>
+        	<p>n2<br><input type="text" name="noun2"></p>
+        	<p>Verb (past tense)<br><input type="text" name="verb"></p>
+        	<p>Noun<br><input type="text" name="noun3"></p>
+        	<input type="submit">
+        </form>
     </body>
 </html>

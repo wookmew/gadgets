@@ -8,7 +8,7 @@ from flask.ext.login import login_user, logout_user, login_required,\
 from . import auth
 from .. import db
 from ..models import User
-from ..email import send_email
+from ..emails import send_email
 from .forms import LoginForm, RegistrationForm, ChangePasswordForm,\
     PasswordResetRequestForm, PasswordResetForm, ChangeEmailForm
 
@@ -56,7 +56,7 @@ def register():
                     username=form.username.data,
                     password=form.password.data)
         db.session.add(user)
-         db.session.commit()
+        db.session.commit()
         token = user.generate_confirmation_token()
         send_email(user.email, 'Confirm Your Account',
                    'auth/email/confirm', user=user, token=token)

@@ -6,9 +6,7 @@ import Anecdotes from './Anecdotes.jsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    {/* <App /> exercises 1.1.-1.5 */}
-  {/* <Unicafe /> exercises 1.6.-1.14 */}
-  <Anecdotes/>
-  </React.StrictMode>,
+  // <App />      // exercises 1.1.-1.5
+  // <Unicafe />  // exercises 1.6.-1.10
+  // <Anecdotes/> // exercises 1.11 - 1.14 
 )

@@ -7,6 +7,7 @@ const AddName = ({
   setPersons,
   setNewName,
   setNewNumber,
+  setMsg,
 }) => {
   const addName = (event) => {
     event.preventDefault();
@@ -38,11 +39,23 @@ const AddName = ({
       }
       return;
     }
-    personService.create(nameObject).then((returnedPerson) => {
-      setPersons(persons.concat(returnedPerson));
-      setNewName("");
-      setNewNumber(0);
-    });
+    personService
+      .create(nameObject)
+      .then((returnedPerson) => {
+        setPersons(persons.concat(returnedPerson));
+        setNewName("");
+        setNewNumber(0);
+        setMsg(`Added ${newName}`);
+        setTimeout(() => {
+          setMsg(null);
+        }, 1000);
+      })
+      .catch((error) => {
+        setMsg(`Added ${newName}`);
+        setTimeout(() => {
+          setMsg(null);
+        }, 1000);
+      });
   };
 
   const handleNameChange = (event) => {

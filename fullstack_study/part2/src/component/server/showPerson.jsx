@@ -1,6 +1,13 @@
 import DeletePerson from "./deletePerson";
 
-const ShowPerson = ({ persons, newPersons, newFilter, setNewPersons }) => {
+const ShowPerson = ({
+  persons,
+  newPersons,
+  newFilter,
+  setOK,
+  setMsg,
+  setNewPersons,
+}) => {
   return (
     <div>
       <h2>Numbers</h2>
@@ -14,6 +21,8 @@ const ShowPerson = ({ persons, newPersons, newFilter, setNewPersons }) => {
                   name={person.name}
                   persons={persons}
                   setNewPersons={setNewPersons}
+                  setOK={setOK}
+                  setMsg={setMsg}
                 />
               </li>
             ))
@@ -25,6 +34,8 @@ const ShowPerson = ({ persons, newPersons, newFilter, setNewPersons }) => {
                   name={person.name}
                   persons={persons}
                   setNewPersons={setNewPersons}
+                  setOK={setOK}
+                  setMsg={setMsg}
                 />
               </li>
             ))}

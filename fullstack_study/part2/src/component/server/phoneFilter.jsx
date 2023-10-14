@@ -1,4 +1,8 @@
+import Notification from "./message";
+
 const PhoneFilter = ({
+  msg,
+  ok,
   newFilter,
   persons,
   setPersons,
@@ -22,6 +26,7 @@ const PhoneFilter = ({
   return (
     <div>
       <h2>Phonebook</h2>
+      <Notification message={msg} ok={ok} />
       filter shown with:{" "}
       <input value={newFilter} onChange={handleFilterChange} />
     </div>

@@ -1,6 +1,6 @@
 import personService from "../../services/person";
 
-const DeletePerson = ({ id, name, persons, setNewPersons }) => {
+const DeletePerson = ({ id, name, persons, setNewPersons, setOK, setMsg }) => {
   const del = () => {
     if (window.confirm(`delete ${name}`)) {
       personService
@@ -13,6 +13,13 @@ const DeletePerson = ({ id, name, persons, setNewPersons }) => {
         })
         .catch((err) => {
           console.log("err", err);
+          if (err.response.status == 404) {
+            setOK(false);
+            setMsg(`${name} has already been removed from server`);
+            setTimeout(() => {
+              setMsg(null);
+            }, 1000);
+          }
         });
     }
   };

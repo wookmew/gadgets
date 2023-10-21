@@ -1,5 +1,4 @@
 const filterReducer = (state = "", action) => {
-  console.log("filter action", action);
   switch (action.type) {
     case "CHANGE":
       return action.payload;
@@ -9,7 +8,6 @@ const filterReducer = (state = "", action) => {
 };
 
 export const filterChange = (filter) => {
-  console.log("wwwww", filter);
   return {
     type: "CHANGE",
     payload: filter,

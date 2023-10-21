@@ -9,9 +9,10 @@ const Anecdotes = () => {
     }
     return state.anecdotes.filter((item) => item.content.match(state.filter));
   });
-  console.log("anecdotes", anecdotes);
+
   const voteAnecdotes = (id) => {
     dispatch(voteAnecdot(id));
+    // dispatch({ type: "anecdotes/voteAnecdot", payload: id });
   };
 
   return (

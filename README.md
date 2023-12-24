@@ -1,1 +1,1 @@
-> my practice project
+> My practice project
